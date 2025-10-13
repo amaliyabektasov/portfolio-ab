@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Amaliya Bektassova</title>
+  <title>Amaliya Bektassova Portfolio</title>
   <style>
     /* -------- RESET -------- */
     * {
@@ -79,4 +79,114 @@
 
     .bottom a {
       color: #555;
-      text-decoration:
+      text-decoration: none;
+    }
+
+    .bottom a:hover {
+      color: #000;
+    }
+
+    /* -------- GALLERY AREA -------- */
+    .gallery {
+      margin-left: 25%;
+      width: 75%;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img, .gallery video {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      object-fit: cover;
+    }
+
+    video {
+      autoplay: true;
+      loop: true;
+      muted: true;
+      playsinline: true;
+    }
+
+    /* Smooth fade when switching categories */
+    .fade {
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <div class="top">
+      <div class="name">Amaliya Bektassova</div>
+
+      <div class="menu">
+        <h3>WORK</h3>
+        <a href="#" class="filter-btn active" data-filter="motion">Motion</a>
+        <a href="#" class="filter-btn" data-filter="graphics">Graphics</a>
+        <a href="#" class="filter-btn" data-filter="3d">3D</a>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <a href="mailto:your@email.com">your@email.com</a><br>
+      <a href="https://www.behance.net/yourname" target="_blank">Behance</a><br><br>
+      © 2025 Amaliya Bektassova
+    </div>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="gallery" id="gallery">
+    <!-- Motion works -->
+    <video class="item motion" src="videos/motion1.mp4" autoplay loop muted playsinline></video>
+    <video class="item motion" src="videos/motion2.mp4" autoplay loop muted playsinline></video>
+
+    <!-- Graphics works -->
+    <img class="item graphics" src="images/graphic1.jpg" alt="">
+    <img class="item graphics" src="images/graphic2.jpg" alt="">
+
+    <!-- 3D works -->
+    <img class="item 3d" src="images/3d1.jpg" alt="">
+    <video class="item 3d" src="videos/3d2.mp4" autoplay loop muted playsinline></video>
+  </div>
+
+  <script>
+    // Filtering logic
+    const buttons = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.item');
+    const gallery = document.getElementById('gallery');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        // Hide all first
+        items.forEach(item => item.style.display = 'none');
+
+        // Show only selected
+        const selected = document.querySelectorAll(`.${filter}`);
+        selected.forEach(item => item.style.display = 'block');
+
+        // Smooth fade
+        gallery.classList.remove('fade');
+        void gallery.offsetWidth;
+        gallery.classList.add('fade');
+      });
+    });
+  </script>
+</body>
+</html>
