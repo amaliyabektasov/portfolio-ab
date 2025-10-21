@@ -1,3 +1,36 @@
+:root {
+    /* Font Sizes */
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 24px;
+    --font-size-xxl: 32px;
+    
+    /* Colors */
+    --color-black: #000000;
+    --color-gray-dark: #333333;
+    --color-gray-light: #f8f9fa;
+    --color-border: #dddddd;
+    
+    /* Spacing */
+    --spacing-xs: 2px;
+    --spacing-sm: 5px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 25px;
+    --spacing-xxl: 40px;
+    
+    /* Layout */
+    --column-1-width: 20%;
+    --column-2-width: 10%;
+    --column-3-width: 25%;
+    --column-4-width: 45%;
+    
+    /* Transitions */
+    --transition-fast: 0.3s;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,9 +39,9 @@
 }
 
 body {
-    background-color: #f8f9fa;
-    color: #333;
-    line-height: 1.6;
+    background-color: var(--color-white);
+    color: var(--color-gray-dark);
+    line-height: 1.2;
     font-family: 'Switzer';
 }
 
@@ -16,194 +49,6 @@ body {
     display: flex;
     min-height: 100vh;
 }
-
-
-/* Column 1: Personal Info */
-.column-1 {
-    width: 20%;
-    background-color: #ffffff;
-    padding: 40px 0 40px 30px; 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.name-title h1 {
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-
-.name-title h2 {
-    font-size: 14px;
-    font-weight: normal;
-    color: #000000;
-    width: 290px;
-}
-
-.contact-info {
-    margin-top: auto; 
-}
-
-.contact-info a {
-    display: block;
-    color: #000000;
-    font-size: 14px;
-    text-decoration: none;
-    margin-bottom: 20px;
-    transition: color 0.3s;
-}
-
-.contact-info p {
-    display: block;
-    color: #000000;
-    font-size: 14px;
-    text-decoration: none;
-    margin-bottom: 20px;
-    transition: color 0.3s;
-}
-
-
-/* Column 2: Navigation */
-.column-2 {
-    width: 10%;
-    background-color: #ffffff;
-    padding: 40px 0 40px 10px; 
-    display: flex;
-    flex-direction: column;
-}
-
-.nav-list {
-    list-style: none;
-    margin: 0; 
-    padding: 0; 
-}
-
-.nav-item {
-    margin-bottom: 2px;
-}
-
-.nav-item a {
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    font-size: 14px;
-    display: block;
-    transition: background-color 0.3s;
-}
-
-
-/* Column 3: Content */
-.column-3 {
-    width: 25%;
-    background-color: #ffffff;
-    padding: 40px 0 40px 10px; 
-    font-size: 14px;
-    /* overflow-y: auto; */
-    display: flex;
-    flex-direction: column;
-}
-
-.content-section {
-    display: none;
-    margin: 0; 
-}
-
-.content-section.active {
-    display: block;
-}
-
-.work-list {
-    list-style: none;
-    margin: 0; 
-    padding: 0; 
-}
-
-.work-item {
-    margin-bottom: 15px;
-}
-
-.work-item a {
-    display: block;
-    padding: 12px 15px;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s;
-}
-
-/* Column 4: Work Details */
-.column-4 {
-    width: 45%;
-    background-color: white;
-    padding: 40px 25px; 
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.work-detail {
-    display: none;
-    margin: 0; 
-}
-
-.work-detail.active {
-    display: block;
-}
-
-.work-title {
-    font-size: 24px;
-    margin-bottom: 15px;
-    margin-top: 0; 
-}
-
-.work-description {
-    margin-bottom: 25px;
-    line-height: 1.7;
-    margin-top: 0; 
-}
-
-.media-scroll {
-    max-height: 400px;
-    overflow-y: auto;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 15px;
-}
-
-.media-item {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.media-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-}
-
-.media-item video {
-    max-width: 100%;
-    height: auto;
-    border-radius: 4px;
-}
-
-/* Ensure all first elements in columns align at the same height */
-.column-1 .name-title,
-.column-2 .nav-list,
-.column-3 .content-section,
-.column-4 .work-detail {
-    padding-top: 0;
-    margin-top: 0;
-}
-
-/* Remove any top margin from the first child in each column */
-.column-1 > *:first-child,
-.column-2 > *:first-child,
-.column-3 > *:first-child,
-.column-4 > *:first-child {
-    margin-top: 0;
-    padding-top: 0;
-}
-
 
 @font-face {
     font-family: 'Switzer';
@@ -232,6 +77,219 @@ body {
     font-weight: normal;
     font-style: italic;
     font-display: swap;
+}
+
+/* Column 1: Personal Info */
+.column-1 {
+    width: var(--column-1-width);
+    color: var(--color-black);
+    padding: var(--spacing-xxl) 0 var(--spacing-xxl) 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.name-title h1 {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.name-title h2 {
+    font-size: var(--font-size-sm);
+    font-weight: normal;
+    color: var(--color-black);
+    width: 290px;
+}
+
+.contact-info {
+    margin-top: auto;
+}
+
+.contact-info a {
+    color: var(--color-black);
+    font-size: var(--font-size-sm);
+    display: block;
+    text-decoration: none;
+    margin-bottom: var(--spacing-xs);
+    transition: color var(--transition-fast);
+}
+
+.contact-info p {
+    display: block;
+    color: var(--font-size-sm);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    margin-bottom: var(--spacing-xs);
+    transition: color var(--transition-fast);
+}
+
+/* Column 2: Navigation */
+.column-2 {
+    width: var(--column-2-width);
+    color: var(--color-white);
+    padding: var(--spacing-xxl) 0 var(--spacing-xxl) 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-bottom: var(--spacing-xs);
+}
+
+.nav-item a {
+    color: var(--color-black);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    display: block;
+    transition: background-color var(--transition-fast);
+}
+
+/* Column 3: Content */
+.column-3 {
+    width: var(--column-3-width);
+    padding: var(--spacing-xxl) 0 var(--spacing-xxl) 10px;
+    font-size: var(--font-size-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+.content-section {
+    display: none;
+    margin: 0;
+}
+
+.content-section.active {
+    display: block;
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+}
+
+.work-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.work-item {
+    margin-bottom: var(--spacing-xs);
+}
+
+.work-item a {
+    display: block;
+    color: var(--color-black);
+    font-weight: normal;
+    margin-bottom: var(--spacing-xs);
+    text-decoration: none;
+    list-style: none;
+    transition: background-color var(--transition-fast);
+}
+
+/* Column 4: Work Details - UPDATED FOR LONG FEED */
+.column-4 {
+    width: var(--column-4-width);
+    background-color: var(--color-white);
+    padding: var(--spacing-xxl) var(--spacing-xl);
+    overflow-y: auto; /* This enables scrolling for the entire column */
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Make column take full viewport height */
+}
+
+.work-detail {
+    display: none;
+    margin: 0;
+}
+
+.work-detail.active {
+    display: block;
+    /* background-color: aqua; */
+}
+
+.work-title {
+    font-size: var(--font-size-sm);
+    font-weight: normal;
+    margin-bottom: var(--spacing-sm);
+    margin-top: 0;
+}
+
+.work-description {
+    width: 95%;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+.media-scroll {
+    border: 0px solid var(--color-white);
+    border-radius: 4px;
+    padding: 0px;
+    /* background-color: aqua; */
+}
+
+.media-item {
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.media-item img {
+    padding-top: 280px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.media-item video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Make iframes responsive */
+.media-item iframe {
+    max-width: 100%;
+    width: 100%;
+    height: 380px; /* Fixed height for iframes, or use aspect ratio */
+    border: none;
+    border-radius: 4px;
+}
+
+/* Ensure all first elements in columns align at the same height */
+.column-1 .name-title,
+.column-2 .nav-list,
+.column-3 .content-section,
+.column-4 .work-detail {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/* Remove any top margin from the first child in each column */
+.column-1 > *:first-child,
+.column-2 > *:first-child,
+.column-3 > *:first-child,
+.column-4 > *:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Hide columns 3 and 4 by default */
+.column-3,
+.column-4 {
+    display: none;
+}
+
+.column-3.column-visible {
+    display: flex;
+}
+
+.column-4.column-visible {
+    display: flex;
 }
 
 /* Responsive Design */
