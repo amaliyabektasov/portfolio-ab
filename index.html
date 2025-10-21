@@ -1,196 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Amaliya Bektassova Portfolio</title>
-  <style>
-    /* -------- RESET -------- */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: Helvetica, Arial, sans-serif;
-      color: #111;
-      background: #fff;
-      display: flex;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    /* -------- SIDEBAR -------- */
-    .sidebar {
-      position: fixed;
-      left: 0;
-      top: 0;
-      width: 25%;
-      height: 100%;
-      padding: 40px 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border-right: 1px solid #eee;
-    }
-
-    .top {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    .name {
-      font-size: 1.3em;
-      font-weight: bold;
-      letter-spacing: 0.02em;
-    }
-
-    .menu {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .menu h3 {
-      font-size: 0.9em;
-      letter-spacing: 0.05em;
-      color: #888;
-    }
-
-    .menu a {
-      text-decoration: none;
-      color: #111;
-      font-size: 0.95em;
-      line-height: 1.5;
-      transition: 0.2s;
-    }
-
-    .menu a:hover, .menu a.active {
-      color: #000;
-      font-weight: bold;
-    }
-
-    .bottom {
-      font-size: 0.8em;
-      line-height: 1.5;
-      color: #555;
-    }
-
-    .bottom a {
-      color: #555;
-      text-decoration: none;
-    }
-
-    .bottom a:hover {
-      color: #000;
-    }
-
-    /* -------- GALLERY AREA -------- */
-    .gallery {
-      margin-left: 25%;
-      width: 75%;
-      height: 100vh;
-      overflow-y: auto;
-      padding: 40px;
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
-    }
-
-    .gallery img, .gallery video {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-      object-fit: cover;
-    }
-
-    video {
-      autoplay: true;
-      loop: true;
-      muted: true;
-      playsinline: true;
-    }
-
-    /* Smooth fade when switching categories */
-    .fade {
-      animation: fadeIn 0.4s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amaliya Bektassova  </title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-    <div class="top">
-      <div class="name">Amaliya Bektassova</div>
+    <div class="container">
+        <!-- Column 1: Personal Info -->
+        <div class="column-1">
+            <div class="name-title">
+                <h1>AMALIYA BEKTASSOVA</h1>
+                <h2>I AM A MULTIDISCIPLINARY ARTIST EXPLORING WEHRE THE DIGITAL TOUCHES THE REAL</h2>
+            </div>
+            <div class="contact-info">
+                <a href="https://www.behance.net/meowllala" target="_blank">BEHANCE</a>
+                <a href="mailto:amaliyabektasov@gmail.com">CONTACT ME</a>
+                <p>© 2025 AMALIYA BEKTASSOVA</p>
+            </div>
+        </div>
 
-      <div class="menu">
-        <h3>WORK</h3>
-        <a href="#" class="filter-btn active" data-filter="motion">Motion</a>
-        <a href="#" class="filter-btn" data-filter="graphics">Graphics</a>
-        <a href="#" class="filter-btn" data-filter="3d">3D</a>
-      </div>
+        <!-- Column 2: Navigation -->
+        <div class="column-2">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" data-target="about">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-target="work">WORK</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Content -->
+        <div class="column-3">
+            <!-- About Section -->
+            <div class="content-section active" id="about-content">
+                <p> I AM A MULTIDISCIPLINARY ARTIST WORKING BETWEEN GRAPHICS, MOTION AND BAD CGI.
+                    DRIVEN BY RESEARCH AND CURIOUSITY, I SEE OUT PATTERNS, JOKES, AND COUNCIDENCES 
+                    THAT REVEAL HOW DESIGIN SHAPES CULTURE AND HOW CULTURE, IN TURN, SHAPES DESIGN</P>    
+            </div>
+
+            <!-- Work List Section -->
+            <div class="content-section" id="work-content">
+                <ul class="work-list">
+                    <li class="work-item">
+                        <a href="#" data-work="work1">REST ANIMATION VIDEO</a>
+                    </li>
+                    <li class="work-item">
+                        <a href="#" data-work="work2">SINNERS BOARD GAME</a>
+                    </li>
+                    <li class="work-item">
+                        <a href="#" data-work="work3">SINS ANIMATION VIDEO</a>
+                    </li>
+                    <li class="work-item">
+                        <a href="#" data-work="work4">CODE.ME BRANDING</a>
+                    </li>
+                     <li class="work-item">
+                        <a href="#" data-work="work5">STARBOARD REACH</a>
+                    </li>
+                    <li class="work-item">
+                        <a href="#" data-work="work6">ANIMATED COLLAGE</a>
+                    </li>
+                    <li class="work-item">
+                        <a href="#" data-work="work7">CITIX (SHIT HOLE)</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+
+        <!-- Column 4: Work Details -->
+        <div class="column-4">
+            <!-- Work 1 Details -->
+            <div class="work-detail active" id="work1">
+                <div class="text-wrapper">
+                    <h2 class="work-title">REST</h2>
+                    <p class="work-description">
+                        THIS PIECE EXPLORES THE PERVASIVE INFLUENCE OF SOCIETAL EXPECTATIONS ON INDIVIDUALS 
+                        AND THE LIBERATION THAT COMES WHEN THESE PRESSURES ARE REMOVED. IT AIMS TO RESONATE 
+                        WITH VIEWERS BY HIGHLIGHTING THE UNIVERSAL STRUGGLE OF LIVING UP TO EXTERNAL STANDARDS 
+                        AND THE TRANSFORMATIVE POWER OF SELF-ACCEPTANCE. 
+                    </p>
+                </div>
+                
+                <div class="media-scroll">
+                    <!-- YouTube Video -->
+                    <div class="media-item">
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/1MmXuAsl8Pw?si=8ZEFMBYyxjJ9j3ez" 
+                                title="REST" frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="media-item">
+                        <img src="src/images/rest.jpg" alt="REST photo">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Work 2 Details -->
+            <div class="work-detail active" id="work2">
+                <div class="text-wrapper">
+                    <h2 class="work-title">SINNERS</h2>
+                    <p class="work-description">
+                        SEVEN PRINCES VENTURED INTO THE DARK FOREST TO RESCUE THE PRINCESS. 
+                        THEY FOUND THEMSELVES UNWELCOME GUESTS, AS SINS AWAITED THEM IN THE 
+                        DARKEST CORNERS OF THE WOODS. WHO WILL BE ABLE TO CONFRONT THEIR VICES AND STAY ON THE RIGHT PATH? 
+                    </p>
+                </div>
+                
+                <div class="media-scroll">
+                    <div class="media-item">
+                        <div class="video-container">
+                            <iframe src="https://player.vimeo.com/video/381372706?h=901765959d" 
+                                title="Sinners video" frameborder="0" 
+                                allow="autoplay; fullscreen; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    
+                    <div class="media-item">
+                        <img src="src/images/sinners.png" alt="SINNERS PHOTO">
+                    </div>
+                    <div class="media-item">
+                        <img src="src/images/sinners_poster.jpg" alt="SINNERS POSTER">
+                    </div>
+                </div>
+            </div>
+
+            
+
+        </div>
     </div>
 
-    <div class="bottom">
-      <a href="mailto:amaliyabektasov@gmail.com">contact me</a><br>
-      <a href="https://www.behance.net/meowllala" target="_blank">Behance</a><br><br>
-      © 2025 Amaliya Bektassova
-    </div>
-  </div>
-
-  <!-- GALLERY -->
-  <div class="gallery" id="gallery">
-    <!-- Motion works -->
-    <video class="item motion" src="videos/motion1.mp4" autoplay loop muted playsinline></video>
-    <video class="item motion" src="videos/motion2.mp4" autoplay loop muted playsinline></video>
-
-    <!-- Graphics works -->
-    <img class="item graphics" src="images/graphic1.jpg" alt="">
-    <img class="item graphics" src="images/graphic2.jpg" alt="">
-
-    <!-- 3D works -->
-    <img class="item 3d" src="images/3d1.jpg" alt="">
-    <video class="item 3d" src="videos/3d2.mp4" autoplay loop muted playsinline></video>
-  </div>
-
-  <script>
-    // Filtering logic
-    const buttons = document.querySelectorAll('.filter-btn');
-    const items = document.querySelectorAll('.item');
-    const gallery = document.getElementById('gallery');
-
-    buttons.forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.preventDefault();
-        buttons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        const filter = btn.dataset.filter;
-
-        // Hide all first
-        items.forEach(item => item.style.display = 'none');
-
-        // Show only selected
-        const selected = document.querySelectorAll(`.${filter}`);
-        selected.forEach(item => item.style.display = 'block');
-
-        // Smooth fade
-        gallery.classList.remove('fade');
-        void gallery.offsetWidth;
-        gallery.classList.add('fade');
-      });
-    });
-  </script>
-</body>
-</html>
-
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>

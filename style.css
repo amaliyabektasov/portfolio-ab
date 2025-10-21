@@ -1,0 +1,324 @@
+:root {
+    /* Font Sizes */
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 24px;
+    --font-size-xxl: 32px;
+    
+    /* Colors */
+    --color-black: #000000;
+    --color-gray-dark: #333333;
+    --color-gray-light: #f8f9fa;
+    --color-border: #dddddd;
+    
+    /* Spacing */
+    --spacing-xs: 2px;
+    --spacing-sm: 5px;
+    --spacing-md: 15px;
+    --spacing-lg: 20px;
+    --spacing-xl: 25px;
+    --spacing-xxl: 40px;
+    
+    /* Layout */
+    --column-1-width: 20%;
+    --column-2-width: 10%;
+    --column-3-width: 25%;
+    --column-4-width: 45%;
+    
+    /* Transitions */
+    --transition-fast: 0.3s;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Switzer';
+}
+
+body {
+    background-color: var(--color-white);
+    color: var(--color-gray-dark);
+    line-height: 1.2;
+    font-family: 'Switzer';
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+@font-face {
+    font-family: 'Switzer';
+    src: url('src/fonts/Switzer-Regular.woff2') format('woff2'),
+         url('src/fonts/Switzer-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap; 
+}
+
+/* Bold font */
+@font-face {
+    font-family: 'Switzer';
+    src: url('src/fonts/Switzer-Bold.woff2') format('woff2'),
+         url('src/fonts/Switzer-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Italic font */
+@font-face {
+    font-family: 'Switzer';
+    src: url('src/fonts/Switzer-Italic.woff2') format('woff2'),
+         url('src/fonts/Switzer-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* Column 1: Personal Info */
+.column-1 {
+    width: var(--column-1-width);
+    color: var(--color-black);
+    padding: var(--spacing-xxl) 0 var(--spacing-xxl) 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.name-title h1 {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.name-title h2 {
+    font-size: var(--font-size-sm);
+    font-weight: normal;
+    color: var(--color-black);
+    width: 290px;
+}
+
+.contact-info {
+    margin-top: auto;
+}
+
+.contact-info a {
+    color: var(--color-black);
+    font-size: var(--font-size-sm);
+    display: block;
+    text-decoration: none;
+    margin-bottom: var(--spacing-xs);
+    transition: color var(--transition-fast);
+}
+
+.contact-info p {
+    display: block;
+    color: var(--font-size-sm);
+    font-size: var(--font-size-sm);
+    text-decoration: none;
+    margin-bottom: var(--spacing-xs);
+    transition: color var(--transition-fast);
+}
+
+/* Column 2: Navigation */
+.column-2 {
+    width: var(--column-2-width);
+    color: var(--color-white);
+    padding: var(--spacing-xxl) 0 var(--spacing-xxl) 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-item {
+    margin-bottom: var(--spacing-xs);
+}
+
+.nav-item a {
+    color: var(--color-black);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    display: block;
+    transition: background-color var(--transition-fast);
+}
+
+/* Column 3: Content */
+.column-3 {
+    width: var(--column-3-width);
+    padding: var(--spacing-xxl) 0 var(--spacing-xxl) 10px;
+    font-size: var(--font-size-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+.content-section {
+    display: none;
+    margin: 0;
+}
+
+.content-section.active {
+    display: block;
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+}
+
+.work-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.work-item {
+    margin-bottom: var(--spacing-xs);
+}
+
+.work-item a {
+    display: block;
+    color: var(--color-black);
+    font-weight: normal;
+    margin-bottom: var(--spacing-xs);
+    text-decoration: none;
+    list-style: none;
+    transition: background-color var(--transition-fast);
+}
+
+/* Column 4: Work Details */
+.column-4 {
+    width: var(--column-4-width);
+    background-color: var(--color-white);
+    padding: var(--spacing-xxl) var(--spacing-xl);
+    overflow-y: auto; 
+    display: flex;
+    flex-direction: column;
+    height: 100vh; 
+}
+
+.work-detail {
+    display: none;
+    margin: 0;
+}
+
+.work-detail.active {
+    display: block;
+    /* background-color: aqua; */
+}
+
+.work-title {
+    font-size: var(--font-size-sm);
+    font-weight: normal;
+    margin-bottom: var(--spacing-sm);
+    margin-top: 0;
+}
+
+.work-description {
+    width: 95%;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2;
+    margin-top: 0;
+}
+
+.media-scroll {
+    border: 0px solid var(--color-white);
+    border-radius: 4px;
+    padding: 0px;
+    /* background-color: aqua; */
+}
+
+
+/* Video container for consistent dimensions */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    margin-bottom: var(--spacing-lg);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    border: none;
+}
+
+/* Update your existing media-item styles */
+.media-item {
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.media-item img {
+    max-width: 100%;
+    padding-top: 250px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.media-item video {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+
+/* Ensure all first elements in columns align at the same height */
+.column-1 .name-title,
+.column-2 .nav-list,
+.column-3 .content-section,
+.column-4 .work-detail {
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/* Remove any top margin from the first child in each column */
+.column-1 > *:first-child,
+.column-2 > *:first-child,
+.column-3 > *:first-child,
+.column-4 > *:first-child {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+/* Hide columns 3 and 4 by default */
+.column-3,
+.column-4 {
+    display: none;
+}
+
+.column-3.column-visible {
+    display: flex;
+}
+
+.column-4.column-visible {
+    display: flex;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .container {
+        flex-wrap: wrap;
+    }
+    
+    .column-1, .column-2, .column-3, .column-4 {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .column-1, .column-2, .column-3, .column-4 {
+        width: 100%;
+    }
+}
