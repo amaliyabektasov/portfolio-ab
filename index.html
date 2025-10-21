@@ -1,47 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Amaliya Bektassova Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <script src="myscripts.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amaliya Bektassova  </title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-    <div class="top">
-      <div class="name">Amaliya Bektassova</div>
+    <div class="container">
+        <!-- Column 1: Personal Info -->
+        <div class="column-1">
+            <div class="name-title">
+                <h1>AMALIYA BEKTASSOVA</h1>
+                <h2>I AM A MULTIDISCIPLINARY ARTIST EXPLORING WEHRE THE DIGITAL TOUCHES THE REAL</h2>
+            </div>
+            <div class="contact-info">
+                <a href="mailto:amaliyabektasov@gmail.com">CONTACT ME</a>
+                <a href="https://www.behance.net/meowllala" target="_blank">BEHANCE</a>
+                <p>2025 AMALIYA BEKTASSOVA</p>
+            </div>
+        </div>
 
-      <div class="menu">
-        <h3>WORK</h3>
-        <a href="#" class="filter-btn active" data-filter="motion">Motion</a>
-        <a href="#" class="filter-btn" data-filter="graphics">Graphics</a>
-        <a href="#" class="filter-btn" data-filter="3d">3D</a>
-      </div>
+        <!-- Column 2: Navigation -->
+        <div class="column-2">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" data-target="about">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-target="work">WORK</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Column 3: Content -->
+        <div class="column-3">
+            <!-- About Section -->
+            <div class="content-section active" id="about-content">
+                <p>I AM A MULTIDISCIPLINARY ARTIST WORKING BETWEEN GRAPHICS, MOTION AND BAD CGI.
+                    DRIVEN BY RESEARCH AND CURIOUSITY, I SEE OUT PATTERNS, JOKES, AND COUNCIDENCES 
+                    THAT REVEAL HOW DESIGIN SHAPES CULTURE AND HOW CULTURE, IN TURN, SHAPES DESIGN</P>    
+                <!-- <p>I specialize in UI/UX design, front-end development, and brand identity. My approach combines strategic thinking with creative execution to deliver solutions that not only look great but also drive results.</p>
+                <p>When I'm not designing or coding, you can find me exploring new technologies, attending design conferences, or enjoying the outdoors with my camera.</p> -->
+            </div>
+
+            <!-- Work List Section -->
+            <div class="content-section" id="work-content">
+                <h2>My Projects</h2>
+                <ul class="work-list">
+                    <li class="work-item">
+                        <a href="#" data-work="work1">work1</a>
+                    </li>
+                    <li class="work-item">
+                        <a href="#" data-work="work2">work2</a>
+                    </li>
+                    <li class="work-item">
+                        <a href="#" data-work="work3">work3</a>
+                    </li>
+                    <li class="work-item">
+                        <a href="#" data-work="work4">work4</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Column 4: Work Details -->
+        <div class="column-4">
+            <!-- Work 1 Details -->
+            <div class="work-detail active" id="work1">
+                <h2 class="work-title">AAAAAAAA</h2>
+                <p class="work-description">
+                    AAAAAAAA
+                </p>
+                <div class="media-scroll">
+                    <!-- <div class="media-item">
+                        <img src="https://via.placeholder.com/600x400/3498db/ffffff?text=Logo+Design" alt="TechStart Logo">
+                    </div>
+                    <div class="media-item">
+                        <img src="https://via.placeholder.com/600x400/2ecc71/ffffff?text=Brand+Guidelines" alt="Brand Guidelines">
+                    </div>
+                    <div class="media-item">
+                        <img src="https://via.placeholder.com/600x400/e74c3c/ffffff?text=Business+Cards" alt="Business Cards">
+                    </div> -->
+                </div>
+            </div>
+
+            <!-- Work 2 Details -->
+            <div class="work-detail" id="work2">
+                <h2 class="work-title">BBBBB</h2>
+                <p class="work-description">
+                   BBBBBBBBB
+                </p>
+                <div class="media-scroll">
+                    <!-- <div class="media-item">
+                        <img src="https://via.placeholder.com/600x400/9b59b6/ffffff?text=Homepage+Design" alt="Homepage Design">
+                    </div>
+                    <div class="media-item">
+                        <img src="https://via.placeholder.com/600x400/f39c12/ffffff?text=Product+Page" alt="Product Page">
+                    </div>
+                    <div class="media-item">
+                        <img src="https://via.placeholder.com/600x400/1abc9c/ffffff?text=Checkout+Process" alt="Checkout Process">
+                    </div> -->
+                </div>
+            </div>
+
+            <!-- Work 3 Details -->
+            <div class="work-detail" id="work3">
+                <h2 class="work-title">Mobile App UI/UX</h2>
+                <p class="work-description">
+                    User interface and experience design for a fitness tracking mobile application. The design focuses on intuitive navigation, motivational elements, and data visualization to help users achieve their fitness goals.
+                </p>
+                <div class="media-scroll">
+                    <div class="media-item">
+                        <img src="https://via.placeholder.com/300x600/3498db/ffffff?text=App+Dashboard" alt="App Dashboard">
+                    </div>
+                    <div class="media-item">
+                        <img src="https://via.placeholder.com/300x600/2ecc71/ffffff?text=Workout+Tracking" alt="Workout Tracking">
+                    </div>
+                    <div class="media-item">
+                        <img src="https://via.placeholder.com/300x600/e74c3c/ffffff?text=Progress+Analytics" alt="Progress Analytics">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work 4 Details -->
+            <div class="work-detail" id="work4">
+                <h2 class="work-title">Corporate Website Development</h2>
+                <p class="work-description">
+                    Development of a responsive corporate website with a custom CMS. The project involved front-end development, back-end integration, and performance optimization to ensure fast loading times and seamless user experience across all devices.
+                </p>
+                <div class="media-scroll">
+                    <div class="media-item">
+                        <img src="https://via.placeholder.com/600x400/34495e/ffffff?text=Desktop+View" alt="Desktop View">
+                    </div>
+                    <div class="media-item">
+                        <img src="https://via.placeholder.com/300x600/7f8c8d/ffffff?text=Mobile+View" alt="Mobile View">
+                    </div>
+                    <div class="media-item">
+                        <img src="https://via.placeholder.com/600x400/16a085/ffffff?text=CMS+Interface" alt="CMS Interface">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="bottom">
-      <a href="mailto:amaliyabektasov@gmail.com" id="contact-link">Contact me</a><br>
-      <a href="https://www.behance.net/meowllala" target="_blank">Behance</a><br><br>
-      © 2025 Amaliya Bektassova
-    </div>
-  </div>
-
-  <!-- GALLERY -->
-  <div class="gallery" id="gallery">
-    <!-- Motion works -->
-    <video class="item motion" src="videos/motion1.mp4" autoplay loop muted playsinline></video>
-    <video class="item motion" src="videos/motion2.mp4" autoplay loop muted playsinline></video>
-
-    <!-- Graphics works -->
-    <img class="item graphics" src="images/graphic1.jpg" alt="">
-    <img class="item graphics" src="images/graphic2.jpg" alt="">
-
-    <!-- 3D works -->
-    <img class="item 3d" src="images/3d1.jpg" alt="">
-    <video class="item 3d" src="videos/3d2.mp4" autoplay loop muted playsinline></video>
-  </div>
-
+    <script src="script.js"></script>
 </body>
 </html>
