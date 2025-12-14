@@ -54,17 +54,15 @@ body {
 
 @font-face {
     font-family: 'Inter';
-    src: url('src/fonts/Inter_18pt-Regular.ttf') format('truetype'),
-         url('src/fonts/Inter_18pt-Regular.ttf') format('truetype');
+    src: url('src/fonts/Inter_18pt-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap; 
 }
-/* 
+
 @font-face {
     font-family: 'Inter';
-    src: url('src/fonts/Switzer-Bold.woff2') format('woff2'),
-         url('src/fonts/Switzer-Bold.woff') format('woff');
+    src: url('src/fonts/Inter_18pt-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -72,12 +70,11 @@ body {
 
 @font-face {
     font-family: 'Inter';
-    src: url('src/fonts/Switzer-Italic.woff2') format('woff2'),
-         url('src/fonts/Switzer-Italic.woff') format('woff');
+    src: url('src/fonts/Inter_18pt-Italic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
     font-display: swap;
-} */
+}
 
 /* Column 1: Personal Info - FIXED */
 .column-1 {
@@ -156,6 +153,7 @@ body {
     font-size: var(--font-size-sm);
     display: block;
 }
+
 
 
 
@@ -284,9 +282,123 @@ body {
     border-radius: 4px;
 }
 
-/* Hide columns 3 and 4 by default */
+/* Column Overview: Landing page with all projects */
+.column-overview {
+    width: 70%;
+    background-color: var(--color-white);
+    padding: var(--spacing-xxl) var(--spacing-xl);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: calc(var(--column-1-width) + var(--column-2-width));
+    top: 0;
+    height: 100vh;
+}
+
+.column-overview h2 {
+    font-size: var(--font-size-sm);
+    font-weight: normal;
+    margin-bottom: var(--spacing-lg);
+}
+
+.overview-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+}
+
+.overview-item {
+    margin-bottom: var(--spacing-sm);
+}
+
+.overview-item img,
+.overview-item video {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: var(--spacing-md);
+}
+
+.overview-item .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin-bottom: var(--spacing-md);
+}
+
+.overview-item .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    border: none;
+}
+
+.overview-item .video-wrapper {
+    max-width: 50%; /* Don't exceed container width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 4px;
+    margin-bottom: var(--spacing-md);
+}
+
+/* .overview-item .video-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+} */
+
+
+/* Info container below each work */
+.overview-info {
+    display: flex;
+    width: 100%;
+    gap: var(--spacing-xl);
+}
+
+.overview-info-left {
+    flex: 1;
+}
+
+.overview-info-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.overview-info-left p,
+.overview-info-right-top p,
+.overview-info-right-bottom p {
+    font-size: var(--font-size-sm);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.overview-info-right-top {
+    margin-bottom: var(--spacing-lg);
+}
+
+.overview-item h3 {
+    font-size: var(--font-size-sm);
+    font-weight: normal;
+    margin-bottom: var(--spacing-xs);
+}
+
+.overview-item p {
+    font-size: var(--font-size-sm);
+    line-height: 1.2;
+}
+
+/* Hide columns 3, 4, and overview by default */
 .column-3,
-.column-4 {
+.column-4,
+.column-overview {
     display: none;
 }
 
@@ -295,6 +407,10 @@ body {
 }
 
 .column-4.column-visible {
+    display: flex;
+}
+
+.column-overview.column-visible {
     display: flex;
 }
 
@@ -330,7 +446,8 @@ body {
     .column-1,
     .column-2,
     .column-3,
-    .column-4 {
+    .column-4,
+    .column-overview {
         position: static;
         width: 100%;
         height: auto;
@@ -338,6 +455,11 @@ body {
         margin-left: 0;
         left: 0;
         padding: 15px 10px;
+    }
+    
+    .overview-info {
+        flex-direction: column;
+        gap: var(--spacing-md);
     }
     
     .column-1 {
