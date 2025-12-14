@@ -70,4 +70,15 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.column-4').classList.add('column-visible');
         });
     });
+
+    document.addEventListener('DOMContentLoaded', function() {
+    // Ensure mailto links work
+    const contactLink = document.querySelector('a[href^="mailto:"]');
+    if (contactLink) {
+        contactLink.addEventListener('click', function(e) {
+            // Let the default mailto behavior happen
+            console.log('Mailto link clicked');
+        });
+    }
+});
 });
