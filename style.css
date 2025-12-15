@@ -92,7 +92,10 @@ body {
 .name-title h1 {
     font-size: var(--font-size-sm);
     margin-bottom: var(--spacing-sm);
+    cursor: pointer;
 }
+
+
 
 .name-title h2 {
     font-size: var(--font-size-sm);
